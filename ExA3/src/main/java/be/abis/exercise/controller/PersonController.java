@@ -64,7 +64,7 @@ public class PersonController {
     public void changePassword(@PathVariable("id") int id, @RequestBody Person person)  {
     	try {
     		System.out.println("changing password to newpswd= " + person.getPassword());
-			ps.changePassword(ps.findPerson(id), person.getPassword());
+			ps.changePassword(person, person.getPassword());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

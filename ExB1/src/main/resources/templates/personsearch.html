@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Course Information</title>
+</head>
+<body>
+	<h1>Choose one of the following options</h1>
+	
+	<br/>
+	
+	<h2>Show All Persons:</h2>	
+	<form action="#" th:action="@{/personList}" method="get">
+		<span><input type="submit" th:value="Click" /></span>
+	</form>
+
+    <br/>
+
+	<h2>Find a person by id:</h2>
+	<form action="#" th:action="@{/findPersonById}" th:object="${person1}"
+		method="post">
+		<table>
+			<tr>
+				<td>Id:</td>
+				<td><input type="text" th:field="*{personId}" /></td>
+			</tr>
+		</table>
+		<input type="submit" value="Find" />
+		 <div>
+		   <span style="color:red" th:errors="*{global}"> </span>      
+  	     </div>
+	</form>
+	
+	<br/>
+	<form action="#" th:action="@{/backToPersonAdmin}" method="get">
+		<span style="margin-left: 295px"><input type="submit" th:value="Back" /></span>
+	</form>
+	
+</body>
+</html>
