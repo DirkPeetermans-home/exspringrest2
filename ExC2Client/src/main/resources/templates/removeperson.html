@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Course Information</title>
+</head>
+<body>
+	
+	<h2>Remove a person by id:</h2>
+	<form action="#" th:action="@{/removePersonById}" th:object="${person}"
+		method="post">
+		<table>
+			<tr>
+				<td>Id:</td>
+				<td><input type="text" th:field="*{personId}" /></td>
+			</tr>
+		</table>
+		<input type="submit" value="Remove" />
+		<div>
+		   <span style="color:red" th:errors="*{global}"> </span>      
+  	     </div>
+	</form>
+	
+	 <form action="#" th:action="@{/backToPersonAdmin}" method="get">
+		<span style="margin-left: 295px"><input type="submit" th:value="Back" /></span>
+	</form>
+	
+	
+</body>
+</html>
